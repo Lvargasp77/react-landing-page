@@ -1,6 +1,6 @@
 import React from "react";
 
-export function jumbotron() {
+export function Jumbotron() {
 	return (
 		<div className="jumbotron">
 			<h1 className="display-4">Hello, world!</h1>

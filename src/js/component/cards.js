@@ -1,28 +1,35 @@
 import React from "react";
-
-//const card = {
-//image: "/workspace/react/-hello/src/img/rigo-baby.jpg",
-//alt: "rigo",
-//title: "Hello Rigo",
-//description: "loesk ksksksksksks",
-//url: "http://wikipedia.com",
-//button: "click here"
-//};
+import PropTypes from "prop-types";
 
 //Cards
-export function Cards(card) {
+export function Cards(props) {
 	return (
 		<div className="col">
-			<div className="card" style="width: 18rem;">
-				<img src={image} className="card-img-top" src="..." alt="..." />
+			<div className="card">
+				<img
+					className="card-img-top"
+					src={props.card.image}
+					alt={props.card.alt}
+				/>
 				<div className="card-body">
-					<h5 className="card-title">{title}</h5>
-					<p className="card-text">{description}</p>
-					<a href={url} className="btn btn-primary">
-						{button}
+					<h5 className="card-title">{props.card.title}</h5>
+					<p className="card-text">{props.card.description}</p>
+					<a href={props.card.url} className="btn btn-primary">
+						{props.card.button}
 					</a>
 				</div>
 			</div>
 		</div>
 	);
 }
+
+Cards.propTypes = {
+	card: {
+		image: PropTypes.string,
+		alt: PropTypes.string,
+		title: PropTypes.string,
+		description: PropTypes.string,
+		url: PropTypes.string,
+		button: PropTypes.string
+	}
+};
